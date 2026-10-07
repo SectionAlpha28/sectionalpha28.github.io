@@ -9,7 +9,7 @@ require "cgi"
 
 module SectionA
   class MemberPieTag < Liquid::Tag
-    COLOURS = %w[#c9a54c #6e6d6a #e5e4e2 #7a6230 #f0dc9c].freeze
+    COLOURS = %w[#e0b84a #6e6d6a #e5e4e2 #7a6230 #f0dc9c].freeze
     SURFACE = "#0b0b0c".freeze
     LINE = "rgba(229, 228, 226, 0.45)".freeze
     LAYOUTS = {
