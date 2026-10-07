@@ -9,3 +9,31 @@
         {% endfor %}
     </noscript>
 {% endif %}
+{% if site.styrene_fonts %}
+<style>
+@font-face {
+  font-family: "Styrene A";
+  src: url("{{ '/assets/fonts/StyreneA-Regular.woff2' | relative_url }}") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Styrene A";
+  src: url("{{ '/assets/fonts/StyreneA-Medium.woff2' | relative_url }}") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Styrene B";
+  src: url("{{ '/assets/fonts/StyreneB-Regular.woff2' | relative_url }}") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Styrene B";
+  src: url("{{ '/assets/fonts/StyreneB-Bold.woff2' | relative_url }}") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+</style>
+{% endif %}

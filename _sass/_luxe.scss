@@ -1,0 +1,123 @@
+// Black, gold and platinum: minimalist overrides on top of Alembic
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.typeset {
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+  hr {
+    border: 0;
+    border-top: 1px solid rgba($gold, 0.35);
+  }
+  blockquote {
+    border-left-color: $gold;
+    color: $platinum;
+  }
+  table th {
+    color: $gold;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.8em;
+  }
+  table td,
+  table th {
+    border-bottom: 1px solid rgba($platinum, 0.12);
+  }
+  em {
+    color: $captionColour;
+  }
+}
+
+// Header: hairline rule, spaced uppercase navigation
+.header {
+  border-bottom: 1px solid rgba($gold, 0.25);
+  .nav a {
+    color: $platinum;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.78em;
+    &:hover,
+    &:focus {
+      color: $gold;
+    }
+  }
+  .item--current a {
+    color: $gold;
+  }
+}
+
+// Feature: quiet black band with gold accents
+.feature {
+  h2 {
+    color: $platinum;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    &::after {
+      content: "";
+      display: block;
+      width: 3rem;
+      height: 1px;
+      margin: 1.2rem auto 0;
+      background: $gold;
+    }
+  }
+  p {
+    color: $captionColour;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 0.8em;
+  }
+}
+
+// Buttons: outlined gold that fills on hover
+input[type="submit"],
+button,
+.button,
+.typeset .button,
+.typeset button {
+  background: transparent;
+  color: $gold;
+  border: 1px solid $gold;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.8em;
+  transition: background-color .2s, color .2s;
+  &:hover,
+  &:active,
+  &:focus {
+    box-shadow: none;
+    background: $gold;
+    color: $black;
+  }
+}
+.button--nav,
+.button--nav:hover,
+.button--nav:focus {
+  border: 0;
+  background: none;
+  color: $platinum;
+}
+
+// Footer: pure black with a hairline
+.footer {
+  background: $black;
+  border-top: 1px solid rgba($gold, 0.25);
+  color: $captionColour;
+  a {
+    color: $captionColour;
+    &:hover {
+      color: $gold;
+    }
+  }
+}
+
+::selection {
+  background: $gold;
+  color: $black;
+}

@@ -88,6 +88,10 @@ baseurl: "" # The deploy workflow fills this in automatically (e.g. "/<repo-name
 # service_worker: false # Will turn off the service worker if set to false
 short_name: "Section A" # The web application short name, defaults to the site title
 css_inline: true # Will insert all styles into a single <style> block in the <head> element and remove the style <link> reference
+styrene_fonts: false # Styrene is a licensed typeface. Add StyreneA-Regular/Medium and StyreneB-Regular/Bold .woff2 files to assets/fonts/ and set this to true to self-host it; Space Grotesk is used until then
+manifest:
+  theme_color: "#0b0b0c"
+  background_color: "#0b0b0c"
 
 # 8. Site favicons & manifest icons
 favicons: # Favicons are also used in the manifest file. Syntax is 'size: path'
@@ -133,4 +137,4 @@ fonts:
   preconnect_urls:
     - https://fonts.gstatic.com
   font_urls:
-    - https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap
+    - https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap
