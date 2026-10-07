@@ -15,6 +15,17 @@ traits:
     text: "What they do when they're not reading cases."
   - label: "Placeholder trait"
     text: "What they're curious about next."
+made_of: # "What I'm made of" pie chart: up to 5 slices, any numbers (scaled to 100%)
+  - label: "Placeholder: Curiosity"
+    value: 35
+  - label: "Placeholder: Coffee"
+    value: 25
+  - label: "Placeholder: Case prep"
+    value: 20
+  - label: "Placeholder: Late-night debates"
+    value: 12
+  - label: "Placeholder: Sleep"
+    value: 8
 photo: "" # e.g. /assets/members/classmate-06.jpg (portrait, at least 800px tall)
 email: "" # optional
 linkedin: "" # optional full LinkedIn URL
