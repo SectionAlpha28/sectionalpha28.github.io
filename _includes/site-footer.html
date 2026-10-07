@@ -4,6 +4,10 @@
       <small class="small">&copy; {{ site.title }} {{ site.time | date: '%Y' }}</small>
     </div>
 
-    {% include nav-footer.html %}
+    {% comment %}Theme credit, styled like the copyright line{% endcomment %}
+    {% assign credit = site.navigation_footer | first %}
+    <div class="credit  typeset">
+      <small class="small"><a href="{{ credit.url }}">{{ credit.title }}</a></small>
+    </div>
   </div>
 </footer>
