@@ -1,0 +1,136 @@
+# Site configuration
+# 1. Files excluded from Jekyll builds
+# 2. Installed Gems
+# 3. Gem settings
+# 4. Jekyll settings
+# 5. Collections
+# 6. Jekyll collections settings
+# 7. Site settings
+# 8. Site favicons & manifest icons
+# 9. Site navigation
+
+# 1. Files excluded from Jekyll builds
+exclude:
+- README.md
+- LICENSE
+- Gemfile
+- Gemfile.lock
+- .jekyll-cache
+- vendor
+
+# 2. Installed Gems
+plugins:
+- jekyll-sitemap
+- jekyll-mentions
+- jekyll-paginate
+- jekyll-seo-tag
+- jekyll-redirect-from
+- jekyll-feed
+- jekyll-commonmark
+- jekyll-include-cache
+- jemoji
+
+# 3. Gem settings
+paginate: 5 # jekyll-paginate > items per page
+paginate_path: blog/page:num # jekyll-paginate > blog page
+jekyll-mentions: https://github.com # jekyll-mentions > service used when @replying
+author: HBS Class of 2028, Section A # jekyll-seo-tag > default author
+
+# 4. Jekyll settings
+sass:
+  style: compressed # Style compression
+permalink: pretty  # Permalink style (/YYYY/MM/DD/page-name/)
+excerpt_separator: <!-- more --> # Marks end of excerpt in posts
+timezone: America/New_York # Timezone for blog posts and alike
+
+# 5. Collections
+collections:
+  posts:
+    title: News # Needed for Siteleaf
+    output: true
+    description: "News and updates from Section A" # The post list page content
+    feature_text: |
+      ## Section News
+      Updates, recaps and announcements from Section A
+
+# 6. Jekyll collections settings
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      image: "/assets/default-social-image.png" # Default image for sharing
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post # Set the default layout for posts
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: page # Set the default layout for pages
+
+# 7. Site settings
+encoding: utf-8 # Make sure the encoding is right
+lang: en-US # Set the site language
+title: "HBS 2028 Section A" # Site name or title, also used in jekyll-seo-tag
+logo: "/assets/logos/logo.svg" # Site logo, also used in jekyll-seo-tag
+description: "The home on the web for Section A of the Harvard Business School MBA Class of 2028" # Site description and default description, also used in jekyll-seo-tag
+url: "" # Your site URL, e.g. "https://<user>.github.io". Used for social sharing links
+baseurl: "" # The deploy workflow fills this in automatically (e.g. "/<repo-name>")
+# email: "" # Section contact email. Uncomment and set it to show it on the site
+# date_format: "%-d %B %Y" # Blog post date formatting using placeholder formatting
+# google_analytics: ""
+# google_analytics_anonymize_ip: ""
+# service_worker: false # Will turn off the service worker if set to false
+short_name: "Section A" # The web application short name, defaults to the site title
+css_inline: true # Will insert all styles into a single <style> block in the <head> element and remove the style <link> reference
+
+# 8. Site favicons & manifest icons
+favicons: # Favicons are also used in the manifest file. Syntax is 'size: path'
+  16: '/assets/logos/logo@16px.png'
+  32: '/assets/logos/logo@32px.png'
+  96: '/assets/logos/logo@96px.png'
+  120: '/assets/logos/logo@120px.png'
+  144: '/assets/logos/logo@144px.png'
+  180: '/assets/logos/logo@180px.png'
+  512: '/assets/logos/logo@512px.png'
+  1024: '/assets/logos/logo@1024px.png'
+
+# 9. Site navigation
+navigation_header:
+- title: Home
+  url: /
+- title: About
+  url: /about/
+- title: Events
+  url: /events/
+- title: News
+  url: /blog/
+- title: Resources
+  url: /resources/
+- title: Contact
+  url: /contact/
+
+navigation_footer:
+- title: Built with Alembic by David Darnes
+  url: https://github.com/daviddarnes/alembic
+
+social_links: # Appears in sidebar. Set the urls then uncomment and comment out as desired
+  # LinkedIn: https://www.linkedin.com/company/your-page
+  # Instagram: https://www.instagram.com/your-handle
+  RSS: /feed.xml
+
+sharing_links: # Appear at the bottom of single posts, add as desired. The value can be 'true' or the desired button colour
+  LinkedIn: "#0a66c2"
+  Email: true
+
+# Load custom fonts from fonts.google.com etc
+fonts:
+  preconnect_urls:
+    - https://fonts.gstatic.com
+  font_urls:
+    - https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap
