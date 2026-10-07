@@ -32,6 +32,13 @@ layout: default
       </div>
     </header>
 
+    {% if page.made_of %}
+    <section class="member-made-of">
+      <p class="eyebrow">What I'm made of</p>
+      {% include member-pie.html slices=page.made_of %}
+    </section>
+    {% endif %}
+
     {% if page.traits %}
     <section class="member-traits">
       {% for trait in page.traits %}
@@ -41,13 +48,6 @@ layout: default
         <p>{{ trait.text }}</p>
       </div>
       {% endfor %}
-    </section>
-    {% endif %}
-
-    {% if page.made_of %}
-    <section class="member-made-of">
-      <p class="eyebrow">What I'm made of</p>
-      {% include member-pie.html slices=page.made_of %}
     </section>
     {% endif %}
 
