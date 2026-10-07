@@ -1,0 +1,50 @@
+---
+layout: default
+---
+
+{% include site-header.html %}
+
+<main class="main  container">
+
+  <article class="article  article--page  content  typeset  member-profile">
+
+    <p class="eyebrow"><a href="{{ '/members/' | relative_url }}">Members</a></p>
+
+    <header class="member-profile__header">
+      {% include member-avatar.html member=page size="large" %}
+      <div>
+        <h1>{{ page.name }}</h1>
+        {% if page.tagline %}<p class="member-profile__tagline">{{ page.tagline }}</p>{% endif %}
+      </div>
+    </header>
+
+    <dl class="member-facts">
+      {% if page.hometown %}<div><dt>Hometown</dt><dd>{{ page.hometown }}</dd></div>{% endif %}
+      {% if page.before %}<div><dt>Before HBS</dt><dd>{{ page.before }}</dd></div>{% endif %}
+      {% if page.ask_me_about %}<div><dt>Ask me about</dt><dd>{{ page.ask_me_about }}</dd></div>{% endif %}
+    </dl>
+
+    <h2 class="eyebrow">In their own words</h2>
+    {{ content }}
+
+    {% if page.linkedin and page.linkedin != "" %}
+      {% include button.html text="LinkedIn" link=page.linkedin %}
+    {% endif %}
+
+    <nav class="member-nav">
+      {% assign members = site.members | sort: "order" %}
+      {% for m in members %}
+        {% if m.url == page.url %}
+          {% assign prev_index = forloop.index0 | minus: 1 %}
+          {% assign next_index = forloop.index0 | plus: 1 %}
+          {% if prev_index >= 0 %}{% assign prev = members[prev_index] %}<a class="member-nav__prev" href="{{ prev.url | relative_url }}">&larr; {{ prev.name }}</a>{% endif %}
+          {% if next_index < members.size %}{% assign next = members[next_index] %}<a class="member-nav__next" href="{{ next.url | relative_url }}">{{ next.name }} &rarr;</a>{% endif %}
+        {% endif %}
+      {% endfor %}
+    </nav>
+
+  </article>
+
+</main>
+
+{% include site-footer.html %}

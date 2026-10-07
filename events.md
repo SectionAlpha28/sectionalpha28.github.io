@@ -1,14 +1,19 @@
 ---
 title: Events
-excerpt: "Upcoming and past Section A events."
+feature_text: |
+  ## Events
+  Where Section A gets together outside the classroom
+excerpt: "Section A gatherings, trips and traditions."
 ---
 
-## Upcoming
+<p class="lede">Some of the best parts of the year happen after the last case of the day.</p>
 
-| Date | Event | Details |
+<p class="eyebrow">Coming up</p>
+
+| Date | Event | Where |
 | --- | --- | --- |
-| _TBD_ | _Placeholder event_ | _Location, time and sign-up link_ |
+| _TBD_ | _Placeholder event_ | _Location_ |
 
-## Past events
+<p class="eyebrow">Looking back</p>
 
-Recaps of past events are posted to the [News]({{ "/blog/" | relative_url }}) page.
+Missed something? Recaps and photos from past events are on the [Stories]({{ "/blog/" | relative_url }}) page.

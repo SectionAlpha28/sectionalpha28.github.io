@@ -121,3 +121,218 @@ button,
   background: $gold;
   color: $black;
 }
+
+// Editorial details
+.typeset {
+  .eyebrow {
+    display: block;
+    margin: 3.2rem 0 0.4rem;
+    padding: 0;
+    color: $gold;
+    font-size: 0.72em;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.24em;
+    a { color: $gold; background-image: none; text-shadow: none; }
+  }
+  .eyebrow + h2 { margin-top: 0; padding-top: 0; }
+  .lede {
+    color: $platinum;
+    font-size: 1.25em;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+  .note {
+    margin-top: 3.2rem;
+    color: $captionColour;
+    font-size: 0.8em;
+  }
+}
+
+// Member cards
+.typeset .member-grid {
+  list-style: none;
+  margin: 1.6rem 0 2rem;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  border-top: 1px solid rgba($gold, 0.2);
+  border-left: 1px solid rgba($gold, 0.2);
+  li {
+    margin: 0;
+    padding: 0;
+    border-right: 1px solid rgba($gold, 0.2);
+    border-bottom: 1px solid rgba($gold, 0.2);
+  }
+  li::before { content: none; }
+}
+.member-card {
+  a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    padding: 1.6rem 1rem;
+    color: $bodyColour;
+    background-image: none !important;
+    text-shadow: none !important;
+    transition: background-color .2s;
+    &:hover,
+    &:focus {
+      background-color: $featureBackgroundColour;
+      .member-card__name { color: $gold; }
+      .avatar { border-color: $gold; }
+    }
+  }
+  &__name {
+    margin-top: 1rem;
+    color: $platinum;
+    font-weight: 500;
+    transition: color .2s;
+  }
+  &__tagline {
+    margin-top: 0.4rem;
+    color: $captionColour;
+    font-size: 0.78em;
+    line-height: 1.5;
+  }
+}
+
+// Avatars: photo, or gold monogram on black
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid rgba($gold, 0.5);
+  background: $black;
+  flex: 0 0 auto;
+  transition: border-color .2s;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+  }
+  &__initials {
+    color: $gold;
+    font-size: 1.4rem;
+    letter-spacing: 0.08em;
+  }
+  &--large {
+    width: 8rem;
+    height: 8rem;
+    .avatar__initials { font-size: 2.2rem; }
+  }
+}
+
+// Member profile
+.member-profile {
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin: 1.2rem 0 2rem;
+    h1 { margin: 0; padding: 0; }
+    @media (max-width: 40em) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  &__tagline {
+    margin: 0.4rem 0 0;
+    padding: 0;
+    color: $captionColour;
+  }
+}
+.member-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  margin: 0 0 1rem;
+  padding: 0;
+  border-top: 1px solid rgba($gold, 0.2);
+  border-left: 1px solid rgba($gold, 0.2);
+  div {
+    padding: 1rem 1.2rem;
+    border-right: 1px solid rgba($gold, 0.2);
+    border-bottom: 1px solid rgba($gold, 0.2);
+  }
+  dt {
+    color: $gold;
+    font-size: 0.7em;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+  }
+  dd { margin: 0.3rem 0 0; padding: 0; color: $platinum; font-size: 0.95rem; line-height: 1.5; }
+}
+.member-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba($gold, 0.2);
+  font-size: 0.85em;
+  .member-nav__next { margin-left: auto; }
+}
+
+// Stories list
+.typeset .story-list {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  border-top: 1px solid rgba($gold, 0.2);
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    margin: 0;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba($gold, 0.2);
+    &::before { content: none; }
+  }
+  span {
+    color: $captionColour;
+    font-size: 0.75em;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    white-space: nowrap;
+  }
+}
+
+// Pillars and stats
+.pillars,
+.stats {
+  display: grid;
+  margin: 1rem 0 2rem;
+  border-top: 1px solid rgba($gold, 0.2);
+  border-left: 1px solid rgba($gold, 0.2);
+  > div {
+    padding: 1.6rem 1.4rem;
+    border-right: 1px solid rgba($gold, 0.2);
+    border-bottom: 1px solid rgba($gold, 0.2);
+  }
+}
+.pillars {
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  h3 { margin: 0; padding: 0; color: $platinum; font-weight: 500; font-size: 1.15rem; line-height: 1.4; }
+  p { margin: 0.6rem 0 0; padding: 0; color: $captionColour; font-size: 0.85rem; line-height: 1.6; }
+}
+.stats {
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+  text-align: center;
+  &__value { display: block; color: $gold; font-size: 2.4rem; font-weight: 300; line-height: 1.2; }
+  &__label {
+    display: block;
+    margin-top: 0.4rem;
+    color: $captionColour;
+    font-size: 0.7em;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+  }
+}

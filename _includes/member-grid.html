@@ -1,0 +1,13 @@
+{% assign members = site.members | sort: "order" %}
+{% if include.limit %}{% assign members = members | slice: 0, include.limit %}{% endif %}
+<ul class="member-grid">
+  {% for m in members %}
+  <li class="member-card">
+    <a href="{{ m.url | relative_url }}">
+      {% include member-avatar.html member=m %}
+      <span class="member-card__name">{{ m.name }}</span>
+      <span class="member-card__tagline">{{ m.tagline }}</span>
+    </a>
+  </li>
+  {% endfor %}
+</ul>

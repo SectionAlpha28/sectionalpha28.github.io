@@ -1,9 +1,9 @@
 ---
-title: Welcome to the Section A website
-categories: [News]
+title: Hello from Section A
+categories: [Stories]
 ---
 
-Welcome to the new home on the web for Section A of the HBS MBA Class of 2028!
+This is the new home of Section A on the web: a place to share who we are and what we get up to.
 <!-- more -->
 
-This site will collect section news, event recaps and useful resources. To add a new post, create a Markdown file in the `_posts` folder named `YYYY-MM-DD-title.md`.
+Over the year we'll post recaps of section events, small moments from the classroom and introductions to the people who make Section A what it is. Start by meeting [the members]({{ "/members/" | relative_url }}).

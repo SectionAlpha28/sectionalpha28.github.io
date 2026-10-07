@@ -17,6 +17,7 @@ exclude:
 - Gemfile.lock
 - .jekyll-cache
 - vendor
+- member-template.md
 
 # 2. Installed Gems
 plugins:
@@ -46,12 +47,16 @@ timezone: America/New_York # Timezone for blog posts and alike
 # 5. Collections
 collections:
   posts:
-    title: News # Needed for Siteleaf
+    title: Stories # Needed for Siteleaf
     output: true
-    description: "News and updates from Section A" # The post list page content
+    description: "Recaps, milestones and the small moments in between." # The post list page content
     feature_text: |
-      ## Section News
-      Updates, recaps and announcements from Section A
+      ## Life in Section A
+      Recaps, milestones and the small moments in between
+  members:
+    title: Members
+    output: true
+    permalink: /members/:name/
 
 # 6. Jekyll collections settings
 defaults:
@@ -69,6 +74,12 @@ defaults:
   -
     scope:
       path: ""
+      type: "members"
+    values:
+      layout: member # Set the default layout for member profiles
+  -
+    scope:
+      path: ""
       type: "pages"
     values:
       layout: page # Set the default layout for pages
@@ -78,7 +89,7 @@ encoding: utf-8 # Make sure the encoding is right
 lang: en-US # Set the site language
 title: "HBS 2028 Section A" # Site name or title, also used in jekyll-seo-tag
 logo: "/assets/logos/logo.svg" # Site logo, also used in jekyll-seo-tag
-description: "The home on the web for Section A of the Harvard Business School MBA Class of 2028" # Site description and default description, also used in jekyll-seo-tag
+description: "Section A of the Harvard Business School MBA Class of 2028: the people, the stories and the year we share." # Site description and default description, also used in jekyll-seo-tag
 url: "https://sectionalpha28.github.io" # Site URL, used for canonical and social sharing links
 baseurl: "" # The deploy workflow fills this in automatically (e.g. "/<repo-name>")
 # email: "" # Section contact email. Uncomment and set it to show it on the site
@@ -108,14 +119,14 @@ favicons: # Favicons are also used in the manifest file. Syntax is 'size: path'
 navigation_header:
 - title: Home
   url: /
-- title: About
+- title: The Section
   url: /about/
+- title: Members
+  url: /members/
+- title: Stories
+  url: /blog/
 - title: Events
   url: /events/
-- title: News
-  url: /blog/
-- title: Resources
-  url: /resources/
 - title: Contact
   url: /contact/
 
