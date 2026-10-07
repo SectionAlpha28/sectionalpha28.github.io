@@ -10,7 +10,7 @@ Built with [Jekyll](https://jekyllrb.com/) on the [Alembic](https://github.com/d
 - **Pages:** `index.md` (home), `about.md` (The Section), `members.md`, `events.md`, `contact.md`
 - **Member profiles:** one file per person in `_members/`. Copy `member-template.md` to `_members/first-last.md` and fill it in: role, hometown, a favourite quote, four personal headlines (`traits`), a "What I'm made of" pie chart (`made_of`, up to 5 slices; any numbers, sized relative to each other and labelled with leader lines) and a bio. Each profile gets its own page at `/members/first-last/` and a card on the Members page. Add a square photo to `assets/members/` (any color photo works; the site shows it in gold and grey automatically), or leave `photo` empty to show gold initials. Delete the `classmate-0X.md` placeholders as real profiles arrive
 - **Stories:** add a Markdown file to `_posts/` named `YYYY-MM-DD-title.md`
-- **Colours and fonts:** `_sass/_settings.scss` sets the black, gold (`#c9a54c`) and platinum (`#e5e4e2`) palette and the type; `_sass/_luxe.scss` holds the minimalist styling
+- **Colours and fonts:** `_sass/_settings.scss` sets the black, bright gold (`#e0b84a`) and platinum (`#e5e4e2`) palette and the type; `_sass/_luxe.scss` holds the minimalist styling
 - **Styrene typeface:** Styrene is a licensed font from Commercial Type, so the site uses the free look-alike Space Grotesk until you add it. With a web licence, put `StyreneA-Regular.woff2`, `StyreneA-Medium.woff2`, `StyreneB-Regular.woff2` and `StyreneB-Bold.woff2` in `assets/fonts/` and set `styrene_fonts: true` in `_config.yml`. Visitors who have Styrene installed already see it
 - **Logo and icons:** `assets/logos/`
 
