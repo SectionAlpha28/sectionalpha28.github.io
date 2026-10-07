@@ -79,7 +79,7 @@ lang: en-US # Set the site language
 title: "HBS 2028 Section A" # Site name or title, also used in jekyll-seo-tag
 logo: "/assets/logos/logo.svg" # Site logo, also used in jekyll-seo-tag
 description: "The home on the web for Section A of the Harvard Business School MBA Class of 2028" # Site description and default description, also used in jekyll-seo-tag
-url: "https://secionalpha28.com" # Site URL, used for canonical and social sharing links
+url: "https://anranchenhbs.github.io" # Site URL, used for canonical and social sharing links. Change it if you add a custom domain
 baseurl: "" # The deploy workflow fills this in automatically (e.g. "/<repo-name>")
 # email: "" # Section contact email. Uncomment and set it to show it on the site
 # date_format: "%-d %B %Y" # Blog post date formatting using placeholder formatting
