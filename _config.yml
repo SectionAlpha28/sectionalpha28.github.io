@@ -131,7 +131,7 @@ navigation_header:
   url: /contact/
 
 navigation_footer:
-- title: Built with Alembic by David Darnes
+- title: Built with Alembic
   url: https://github.com/daviddarnes/alembic
 
 social_links: # Appears in sidebar. Set the urls then uncomment and comment out as desired
