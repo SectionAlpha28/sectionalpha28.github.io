@@ -1,0 +1,25 @@
+{% comment %}
+  "What I'm made of" pie chart for a member profile.
+  Pass slices=page.made_of: a list of {label, value}. Values are scaled to 100%.
+  Colours follow a fixed order from the black, gold and platinum palette; every slice
+  is also named with its share in the legend, so identity never relies on colour alone.
+{% endcomment %}
+{% assign slices = include.slices %}
+{% assign colours = "#c9a54c,#6e6d6a,#e5e4e2,#7a6230,#f0dc9c" | split: "," %}
+{% assign total = 0 %}
+{% for s in slices %}{% assign total = total | plus: s.value %}{% endfor %}
+{% if total > 0 %}
+{% assign gap = 1.2 %}
+{% assign start = 0.0 %}
+{% capture gradient %}{% for s in slices limit: 5 %}{% assign share = s.value | times: 360.0 | divided_by: total %}{% assign end = start | plus: share %}{% assign fill_end = end | minus: gap %}{% assign c = colours[forloop.index0] %}{{ c }} {{ start | round: 2 }}deg {{ fill_end | round: 2 }}deg, #0b0b0c {{ fill_end | round: 2 }}deg {{ end | round: 2 }}deg{% unless forloop.last %}, {% endunless %}{% assign start = end %}{% endfor %}{% endcapture %}
+<figure class="member-pie">
+  <div class="member-pie__chart" role="img" aria-label="{{ include.title | default: "What I'm made of" }}: {% for s in slices limit: 5 %}{{ s.label }} {{ s.value | times: 100.0 | divided_by: total | round }}%{% unless forloop.last %}, {% endunless %}{% endfor %}" style="background: conic-gradient({{ gradient | strip_newlines }});"></div>
+  <figcaption>
+    <ul class="member-pie__legend">
+      {% for s in slices limit: 5 %}
+      <li><span class="member-pie__key" style="background: {{ colours[forloop.index0] }}"></span><span class="member-pie__label">{{ s.label }}</span><span class="member-pie__value">{{ s.value | times: 100.0 | divided_by: total | round }}%</span></li>
+      {% endfor %}
+    </ul>
+  </figcaption>
+</figure>
+{% endif %}
