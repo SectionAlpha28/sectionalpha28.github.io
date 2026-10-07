@@ -113,6 +113,7 @@ body {
     text-transform: none;
     @media (max-width: 48em) { font-size: 2.3rem; }
   }
+  .hero__gold { color: $gold; }
   .hero__mark {
     color: $gold;
     font-size: 0.6em;
