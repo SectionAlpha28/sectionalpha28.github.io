@@ -2,12 +2,22 @@
 name: "Classmate 01"
 initials: "01"
 order: 1
-tagline: "Placeholder: a one-line intro in their own voice."
+role: "Placeholder: what they did before HBS"
 hometown: "Placeholder: Hometown"
-before: "Placeholder: what they did before HBS"
-ask_me_about: "Placeholder: a conversation starter"
-photo: "" # e.g. /assets/members/classmate-01.jpg (square, at least 600px)
+quote: "Placeholder: a quote they live by."
+quote_by: "Placeholder: who said it"
+traits:
+  - label: "Placeholder trait"
+    text: "Two words that sum them up, then a sentence on what they bring to the room."
+  - label: "Placeholder trait"
+    text: "Something they're known for in the section."
+  - label: "Placeholder trait"
+    text: "What they do when they're not reading cases."
+  - label: "Placeholder trait"
+    text: "What they're curious about next."
+photo: "" # e.g. /assets/members/classmate-01.jpg (portrait, at least 800px tall)
+email: "" # optional
 linkedin: "" # optional full LinkedIn URL
 ---
 
-_Placeholder: a short bio in the member's own words. What brought them to HBS, what they're curious about, and what they'd like the section to know about them. Only publish with the member's consent._
+_Placeholder: a short bio in the member's own words. What brought them to HBS, what drives them, and what they'd like people to know. Only publish with the member's consent._

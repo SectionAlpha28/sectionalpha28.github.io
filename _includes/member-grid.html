@@ -6,7 +6,7 @@
     <a href="{{ m.url | relative_url }}">
       {% include member-avatar.html member=m %}
       <span class="member-card__name">{{ m.name }}</span>
-      <span class="member-card__tagline">{{ m.tagline }}</span>
+      <span class="member-card__tagline">{{ m.role }}</span>
     </a>
   </li>
   {% endfor %}

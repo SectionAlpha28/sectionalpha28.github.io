@@ -230,54 +230,184 @@ button,
   }
 }
 
-// Member profile
+// Member profile: portrait and quote, four headlines, then bio
+.member-page {
+  display: block;
+}
 .member-profile {
-  &__header {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding-top: 1.6rem;
+  .eyebrow:first-child { margin-top: 0; }
+}
+.member-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 3.2rem;
+  align-items: center;
+  margin: 1.6rem 0 4rem;
+  @media (max-width: 48em) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  &__photo {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    background: $featureBackgroundColour;
+    border: 1px solid rgba($gold, 0.3);
     display: flex;
     align-items: center;
-    gap: 2rem;
-    margin: 1.2rem 0 2rem;
-    h1 { margin: 0; padding: 0; }
-    @media (max-width: 40em) {
-      flex-direction: column;
-      text-align: center;
+    justify-content: center;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%) contrast(1.05);
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      left: 1.2rem;
+      bottom: 1.2rem;
+      width: 3rem;
+      height: 1px;
+      background: $gold;
     }
   }
-  &__tagline {
+  &__initials {
+    color: $gold;
+    font-size: 5rem;
+    font-weight: 300;
+    letter-spacing: 0.06em;
+  }
+  h1 {
+    margin: 0;
+    padding: 0;
+    color: $platinum;
+    font-size: 3.2rem;
+    line-height: 1.1;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    @media (max-width: 48em) { font-size: 2.4rem; }
+  }
+  &__title {
+    margin: 1rem 0 0;
+    padding: 0;
+    color: $gold;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    line-height: 1.6;
+  }
+  &__meta {
     margin: 0.4rem 0 0;
     padding: 0;
     color: $captionColour;
+    font-size: 0.8rem;
+    line-height: 1.6;
   }
 }
-.member-facts {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
-  margin: 0 0 1rem;
-  padding: 0;
-  border-top: 1px solid rgba($gold, 0.2);
-  border-left: 1px solid rgba($gold, 0.2);
-  div {
-    padding: 1rem 1.2rem;
-    border-right: 1px solid rgba($gold, 0.2);
-    border-bottom: 1px solid rgba($gold, 0.2);
+.typeset .member-quote {
+  margin: 2.4rem 0 0;
+  padding: 1.6rem 0 0;
+  border: 0;
+  border-top: 1px solid rgba($gold, 0.3);
+  p {
+    margin: 0;
+    padding: 0;
+    border-left: 0;
+    color: $platinum;
+    font-size: 1.5rem;
+    line-height: 1.45;
+    font-weight: 300;
+    font-style: normal;
   }
-  dt {
-    color: $gold;
-    font-size: 0.7em;
+  cite {
+    display: block;
+    margin-top: 1rem;
+    color: $captionColour;
+    font-size: 0.75rem;
+    font-style: normal;
     text-transform: uppercase;
+    letter-spacing: 0.18em;
+    &::before { content: "— "; }
+  }
+}
+.member-traits {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid rgba($gold, 0.25);
+  @media (max-width: 40em) { grid-template-columns: 1fr; }
+}
+.typeset .member-trait {
+  padding: 2rem 2rem 2.2rem 0;
+  border-bottom: 1px solid rgba($gold, 0.25);
+  &:nth-child(odd) {
+    @media (min-width: 40.01em) {
+      border-right: 1px solid rgba($gold, 0.25);
+    }
+  }
+  &:nth-child(even) {
+    @media (min-width: 40.01em) { padding-left: 2rem; }
+  }
+  &__index {
+    display: block;
+    color: $gold;
+    font-size: 0.7rem;
     letter-spacing: 0.2em;
   }
-  dd { margin: 0.3rem 0 0; padding: 0; color: $platinum; font-size: 0.95rem; line-height: 1.5; }
+  h2 {
+    margin: 0.6rem 0 0;
+    padding: 0;
+    color: $platinum;
+    font-size: 1.5rem;
+    line-height: 1.3;
+    font-weight: 400;
+  }
+  p {
+    margin: 0.6rem 0 0;
+    padding: 0;
+    color: $bodyColour;
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+}
+.member-bio {
+  max-width: 44rem;
+  margin: 3.2rem 0 0;
+}
+.typeset .member-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+  margin-top: 1.6rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
 }
 .member-nav {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  margin-top: 3rem;
-  padding-top: 1.2rem;
-  border-top: 1px solid rgba($gold, 0.2);
-  font-size: 0.85em;
-  .member-nav__next { margin-left: auto; }
+  margin-top: 4rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid rgba($gold, 0.25);
+  a {
+    color: $platinum;
+    background-image: none !important;
+    text-shadow: none !important;
+    &:hover { color: $gold; }
+  }
+  span {
+    display: block;
+    color: $gold;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+  }
+  .member-nav__next { margin-left: auto; text-align: right; }
 }
 
 // Stories list
