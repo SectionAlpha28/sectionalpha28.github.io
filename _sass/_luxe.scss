@@ -75,6 +75,78 @@ body {
   }
 }
 
+// Home hero: the big, tongue-in-cheek welcome
+.feature--home {
+  position: relative;
+  overflow: hidden;
+  padding: 7rem 0 5rem;
+  text-align: center;
+  // Oversized "A" watermark behind the headline
+  &::before {
+    content: "A";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -52%);
+    font-size: 38rem;
+    line-height: 1;
+    font-weight: 300;
+    color: rgba($gold, 0.05);
+    pointer-events: none;
+  }
+  .container { position: relative; max-width: 60rem; }
+  .hero__kicker {
+    margin: 0 0 2rem;
+    color: $gold;
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+  }
+  .hero__title {
+    margin: 0 auto;
+    padding: 0;
+    max-width: 52rem;
+    color: $platinum;
+    font-size: 3.6rem;
+    line-height: 1.12;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    text-transform: none;
+    @media (max-width: 48em) { font-size: 2.3rem; }
+  }
+  .hero__mark {
+    color: $gold;
+    font-size: 0.6em;
+    vertical-align: super;
+    line-height: 0;
+    margin-left: 0.08em;
+    background-image: none;
+    text-shadow: none;
+    &:hover { color: $goldLight; }
+  }
+  .hero__sub {
+    margin: 2.4rem 0 0;
+    color: $captionColour;
+    &::before {
+      content: "";
+      display: block;
+      width: 3rem;
+      height: 1px;
+      margin: 0 auto 2.4rem;
+      background: $gold;
+    }
+  }
+  .hero__footnote {
+    margin: 3.2rem auto 0;
+    max-width: 34rem;
+    color: rgba($platinum, 0.45);
+    font-size: 0.72rem;
+    line-height: 1.6;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    text-transform: none;
+  }
+}
+
 // Buttons: outlined gold that fills on hover
 input[type="submit"],
 button,
