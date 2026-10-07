@@ -5,7 +5,7 @@ feature_class: feature--home
 feature_text: |
   <p class="hero__kicker">Harvard Business School &middot; MBA Class of 2028</p>
   <h1 class="hero__title">Welcome to <span class="hero__gold">Section A</span>, the best MBA section in the history of Harvard Business School<a class="hero__mark" href="#footnote" aria-label="See footnote">*</a></h1>
-  <p class="hero__footnote" id="footnote">* Not verified by HBS, any ranking, or anyone outside Section A. Self-awarded. The information provided in this website does not constitute financial, investment, legal, or tax advice.</p>
+  <p class="hero__footnote" id="footnote">* Not verified by HBS, any ranking, or anyone outside Section A. Not financial, investment, legal, or tax advice.</p>
 excerpt: "Section A of the Harvard Business School MBA Class of 2028: the people, the stories and the year we share."
 ---
 
