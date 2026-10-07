@@ -599,38 +599,15 @@ button,
     font-size: 23px;
     letter-spacing: 0.02em;
   }
-  figcaption { margin: 0; padding: 0; }
-  &__legend {
-    display: none;
-    list-style: none;
-    margin: 1.6rem 0 0;
-    padding: 0;
-    li {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      margin: 0;
-      padding: 0.7rem 0;
-      border-bottom: 1px solid rgba($platinum, 0.1);
-      color: $platinum;
-      font-size: 0.95rem;
-      line-height: 1.4;
-      &::before { content: none; }
-    }
+  // Compact layout for phones: smaller pie, same leader-line labels
+  &__svg--phone { display: none; }
+  &__svg--phone .member-pie__callouts text {
+    font-size: 14px;
+    letter-spacing: 0.01em;
   }
-  &__key {
-    flex: 0 0 auto;
-    width: 0.7rem;
-    height: 0.7rem;
-    border-radius: 50%;
-  }
-  // On narrow screens the leader-line labels get too small, so list the slices instead
   @media (max-width: 40em) {
-    &__callouts { display: none; }
-    // Crop the empty label area around the pie so it fills the column
-    overflow: hidden;
-    &__svg { width: 233%; max-width: none; margin: -25% 0 -25% -66.5%; }
-    &__legend { display: block; }
+    &__svg--wide { display: none; }
+    &__svg--phone { display: block; }
   }
 }
 
