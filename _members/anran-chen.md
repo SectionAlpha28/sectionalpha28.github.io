@@ -2,8 +2,8 @@
 name: "Anran Chen"
 initials: "AC"
 order: 1
-role: "Oncology research scientist before HBS"
-hometown: ""
+role: "before HBS: Oncology research scientist"
+hometown: "China"
 quote: "Anran, you need to remember, it is usually the professor who ask questions in class!"
 quote_by: "Professor Ashish Nanda"
 traits:
