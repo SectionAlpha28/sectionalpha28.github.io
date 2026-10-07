@@ -40,12 +40,27 @@ layout: default
       </div>
     </header>
 
-    {% if page.made_of %}
-    <section class="member-made-of">
-      <p class="eyebrow">What I'm made of</p>
-      {% include member-pie.html slices=page.made_of %}
-    </section>
-    {% endif %}
+    <div class="member-split{% if page.made_of %}  member-split--two{% endif %}">
+
+      {% if page.made_of %}
+      <section class="member-made-of">
+        <p class="eyebrow">What I'm made of</p>
+        {% include member-pie.html slices=page.made_of %}
+      </section>
+      {% endif %}
+
+      <section class="member-bio">
+        <p class="eyebrow">In their own words</p>
+        {{ content }}
+        {% assign has_email = false %}{% if page.email and page.email != "" %}{% assign has_email = true %}{% endif %}
+        {% if has_email %}
+        <p class="member-links">
+          {% if has_email %}<a href="mailto:{{ page.email }}">{{ page.email }}</a>{% endif %}
+        </p>
+        {% endif %}
+      </section>
+
+    </div>
 
     {% if page.traits %}
     <section class="member-traits">
@@ -58,17 +73,6 @@ layout: default
       {% endfor %}
     </section>
     {% endif %}
-
-    <section class="member-bio">
-      <p class="eyebrow">In their own words</p>
-      {{ content }}
-      {% assign has_email = false %}{% if page.email and page.email != "" %}{% assign has_email = true %}{% endif %}
-      {% if has_email %}
-      <p class="member-links">
-        {% if has_email %}<a href="mailto:{{ page.email }}">{{ page.email }}</a>{% endif %}
-      </p>
-      {% endif %}
-    </section>
 
     <nav class="member-nav">
       {% assign members = site.members | sort: "order" %}

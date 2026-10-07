@@ -216,7 +216,6 @@ button,
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: grayscale(100%);
   }
   &__initials {
     color: $gold;
@@ -253,7 +252,7 @@ button,
   }
   &__photo {
     position: relative;
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 1 / 1;
     background: $featureBackgroundColour;
     border: 1px solid rgba($gold, 0.3);
     display: flex;
@@ -264,7 +263,6 @@ button,
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: grayscale(100%) contrast(1.05);
     }
     &::after {
       content: "";
@@ -378,6 +376,25 @@ button,
   max-width: 44rem;
   margin: 3.2rem 0 0;
 }
+
+// Laptop and up: pie chart and "In their own words" side by side, half each
+.member-split {
+  margin: 0 0 4rem;
+  .member-made-of { margin: 0; }
+  .member-bio { margin: 0; }
+}
+@media (min-width: 48em) {
+  .member-split--two {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4rem;
+    align-items: start;
+    .member-bio { max-width: none; }
+  }
+}
+@media (max-width: 47.99em) {
+  .member-split .member-made-of { margin-bottom: 3.2rem; }
+}
 .typeset .member-links {
   display: flex;
   flex-wrap: wrap;
@@ -485,7 +502,7 @@ button,
   &__callouts text {
     fill: $platinum;
     font-family: inherit;
-    font-size: 17px;
+    font-size: 23px;
     letter-spacing: 0.02em;
   }
   figcaption { margin: 0; padding: 0; }
@@ -518,7 +535,7 @@ button,
     &__callouts { display: none; }
     // Crop the empty label area around the pie so it fills the column
     overflow: hidden;
-    &__svg { width: 200%; max-width: none; margin: -16% 0 -16% -50%; }
+    &__svg { width: 233%; max-width: none; margin: -25% 0 -25% -66.5%; }
     &__legend { display: block; }
   }
 }
