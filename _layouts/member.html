@@ -22,7 +22,7 @@ layout: default
       <div class="member-hero__text">
         <h1>{{ page.name }}</h1>
         {% if page.role %}<p class="member-hero__title">{{ page.role }}</p>{% endif %}
-        {% if page.hometown %}<p class="member-hero__meta">{{ page.hometown }} · Section A, HBS Class of 2028</p>{% endif %}
+        <p class="member-hero__meta">{% if page.hometown and page.hometown != "" %}{{ page.hometown }} · {% endif %}Section A, HBS Class of 2028</p>
         {% if page.quote %}
         <blockquote class="member-quote">
           <p>&ldquo;{{ page.quote }}&rdquo;</p>
