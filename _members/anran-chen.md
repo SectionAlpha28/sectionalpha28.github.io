@@ -26,7 +26,8 @@ made_of: # "What I'm made of" pie chart: up to 5 slices, any numbers (scaled to 
     value: 20
 photo: "/assets/members/anran-chen.jpg"
 email: "" # optional
-linkedin: "" # optional full LinkedIn URL
+linkedin: "https://www.linkedin.com/in/anranchenphd/"
+instagram: "https://www.instagram.com/a_chen_999/"
 ---
 
 _Placeholder: a short bio in Anran's own words. What brought them to HBS, what drives them, and what they'd like people to know._

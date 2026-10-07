@@ -23,6 +23,14 @@ layout: default
         <h1>{{ page.name }}</h1>
         {% if page.role %}<p class="member-hero__title">{{ page.role }}</p>{% endif %}
         <p class="member-hero__meta">{% if page.hometown and page.hometown != "" %}{{ page.hometown }} · {% endif %}Section A, HBS Class of 2028</p>
+        {% assign has_linkedin = false %}{% if page.linkedin and page.linkedin != "" %}{% assign has_linkedin = true %}{% endif %}
+        {% assign has_instagram = false %}{% if page.instagram and page.instagram != "" %}{% assign has_instagram = true %}{% endif %}
+        {% if has_linkedin or has_instagram %}
+        <p class="member-social">
+          {% if has_linkedin %}<a href="{{ page.linkedin }}" target="_blank" rel="noopener" aria-label="{{ page.name }} on LinkedIn">{% include icon.html id="linkedin" title="LinkedIn" width="20" height="20" %}</a>{% endif %}
+          {% if has_instagram %}<a href="{{ page.instagram }}" target="_blank" rel="noopener" aria-label="{{ page.name }} on Instagram">{% include icon.html id="instagram" title="Instagram" width="20" height="20" %}</a>{% endif %}
+        </p>
+        {% endif %}
         {% if page.quote %}
         <blockquote class="member-quote">
           <p>&ldquo;{{ page.quote }}&rdquo;</p>
@@ -55,11 +63,9 @@ layout: default
       <p class="eyebrow">In their own words</p>
       {{ content }}
       {% assign has_email = false %}{% if page.email and page.email != "" %}{% assign has_email = true %}{% endif %}
-      {% assign has_linkedin = false %}{% if page.linkedin and page.linkedin != "" %}{% assign has_linkedin = true %}{% endif %}
-      {% if has_email or has_linkedin %}
+      {% if has_email %}
       <p class="member-links">
         {% if has_email %}<a href="mailto:{{ page.email }}">{{ page.email }}</a>{% endif %}
-        {% if has_linkedin %}<a href="{{ page.linkedin }}">LinkedIn</a>{% endif %}
       </p>
       {% endif %}
     </section>

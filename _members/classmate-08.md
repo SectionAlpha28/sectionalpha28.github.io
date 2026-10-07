@@ -29,6 +29,7 @@ made_of: # "What I'm made of" pie chart: up to 5 slices, any numbers (scaled to 
 photo: "" # e.g. /assets/members/classmate-08.jpg (portrait, at least 800px tall)
 email: "" # optional
 linkedin: "" # optional full LinkedIn URL
+instagram: "" # optional full Instagram URL
 ---
 
 _Placeholder: a short bio in the member's own words. What brought them to HBS, what drives them, and what they'd like people to know. Only publish with the member's consent._
