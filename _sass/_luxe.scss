@@ -348,9 +348,19 @@ button,
       object-fit: cover;
       filter: url(#duotone-gold);
     }
+    // Vignette: edges fade toward the black page
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background: radial-gradient(circle farthest-corner, transparent 45%, rgba($black, 0.25) 72%, rgba($black, 0.6) 100%);
+    }
     &::after {
       content: "";
       position: absolute;
+      z-index: 2;
       left: 1.2rem;
       bottom: 1.2rem;
       width: 3rem;
