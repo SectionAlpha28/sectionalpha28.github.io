@@ -298,6 +298,7 @@ button,
     width: 100%;
     height: 100%;
     object-fit: cover;
+    filter: url(#duotone-gold);
   }
   &__initials {
     color: $gold;
@@ -345,6 +346,7 @@ button,
       width: 100%;
       height: 100%;
       object-fit: cover;
+      filter: url(#duotone-gold);
     }
     &::after {
       content: "";

@@ -28,7 +28,7 @@ made_of: # "What I'm made of" pie chart: up to 5 slices, any numbers (scaled to 
     value: 12
   - label: "Sleep"
     value: 8
-photo: "" # e.g. /assets/members/first-last.jpg (square, at least 800px)
+photo: "" # e.g. /assets/members/first-last.jpg (square, at least 800px; any color photo, shown in gold and grey automatically)
 email: "" # optional
 linkedin: "" # optional full LinkedIn URL
 instagram: "" # optional full Instagram URL
