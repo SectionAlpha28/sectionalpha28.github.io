@@ -1,0 +1,76 @@
+---
+layout: default
+---
+
+{% include site-header.html %}
+{% comment %}Profile layout inspired by editorial team pages: portrait, quote, four personal headlines, bio.{% endcomment %}
+
+<main class="main  container  member-page">
+
+  <article class="member-profile  typeset">
+
+    <p class="eyebrow"><a href="{{ '/members/' | relative_url }}">&larr; All members</a></p>
+
+    <header class="member-hero">
+      <div class="member-hero__photo">
+        {%- if page.photo and page.photo != "" -%}
+          <img src="{{ page.photo | relative_url }}" alt="Portrait of {{ page.name }}">
+        {%- else -%}
+          <span class="member-hero__initials" aria-hidden="true">{{ page.initials | default: page.name | slice: 0, 2 }}</span>
+        {%- endif -%}
+      </div>
+      <div class="member-hero__text">
+        <h1>{{ page.name }}</h1>
+        {% if page.role %}<p class="member-hero__title">{{ page.role }}</p>{% endif %}
+        {% if page.hometown %}<p class="member-hero__meta">{{ page.hometown }} · Section A, HBS Class of 2028</p>{% endif %}
+        {% if page.quote %}
+        <blockquote class="member-quote">
+          <p>&ldquo;{{ page.quote }}&rdquo;</p>
+          {% if page.quote_by %}<cite>{{ page.quote_by }}</cite>{% endif %}
+        </blockquote>
+        {% endif %}
+      </div>
+    </header>
+
+    {% if page.traits %}
+    <section class="member-traits">
+      {% for trait in page.traits %}
+      <div class="member-trait">
+        <span class="member-trait__index">{{ forloop.index | prepend: "0" | slice: -2, 2 }}</span>
+        <h2>{{ trait.label }}</h2>
+        <p>{{ trait.text }}</p>
+      </div>
+      {% endfor %}
+    </section>
+    {% endif %}
+
+    <section class="member-bio">
+      <p class="eyebrow">In their own words</p>
+      {{ content }}
+      {% assign has_email = false %}{% if page.email and page.email != "" %}{% assign has_email = true %}{% endif %}
+      {% assign has_linkedin = false %}{% if page.linkedin and page.linkedin != "" %}{% assign has_linkedin = true %}{% endif %}
+      {% if has_email or has_linkedin %}
+      <p class="member-links">
+        {% if has_email %}<a href="mailto:{{ page.email }}">{{ page.email }}</a>{% endif %}
+        {% if has_linkedin %}<a href="{{ page.linkedin }}">LinkedIn</a>{% endif %}
+      </p>
+      {% endif %}
+    </section>
+
+    <nav class="member-nav">
+      {% assign members = site.members | sort: "order" %}
+      {% for m in members %}
+        {% if m.url == page.url %}
+          {% assign prev_index = forloop.index0 | minus: 1 %}
+          {% assign next_index = forloop.index0 | plus: 1 %}
+          {% if prev_index >= 0 %}{% assign prev = members[prev_index] %}<a class="member-nav__prev" href="{{ prev.url | relative_url }}"><span>Previous</span>{{ prev.name }}</a>{% endif %}
+          {% if next_index < members.size %}{% assign next = members[next_index] %}<a class="member-nav__next" href="{{ next.url | relative_url }}"><span>Next</span>{{ next.name }}</a>{% endif %}
+        {% endif %}
+      {% endfor %}
+    </nav>
+
+  </article>
+
+</main>
+
+{% include site-footer.html %}

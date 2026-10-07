@@ -1,32 +1,38 @@
+// Palette: black, gold and platinum
+$gold: #c9a54c !default;
+$goldLight: #e6cd85 !default;
+$platinum: #e5e4e2 !default;
+$black: #000000 !default;
+
 // Background colours
-$backgroundColour: #ffffff !default;
-$codeBackgroundColour: #fafafa !default;
-$featureBackgroundColour: #f6f2f2 !default;
-$accentColour: #a51c30 !default;
+$backgroundColour: #0b0b0c !default;
+$codeBackgroundColour: #17171a !default;
+$featureBackgroundColour: #111113 !default;
+$accentColour: #c9a54c !default;
 
 // Text colours
-$headingColour: #1e1e1e !default;
-$bodyColour: #333333 !default;
-$linkColour: #a51c30 !default;
-$hoverColour: #6e1220 !default;
-$focusColour: #fa407a !default;
-$captionColour: #a8adac !default;
+$headingColour: #f1f0ec !default;
+$bodyColour: #d4d3cf !default;
+$linkColour: #c9a54c !default;
+$hoverColour: #e6cd85 !default;
+$focusColour: #e6cd85 !default;
+$captionColour: #8f8e8a !default;
 $white: #ffffff !default;
 
 // Typography
 $bodytype: (
-  font-family: "Georgia, serif",
+  font-family: '"Styrene B", "Styrene A", "Space Grotesk", "Helvetica Neue", Arial, sans-serif',
   regular: 400,
   bold: 700,
   italic: italic,
-  cap-height: 0.75
+  cap-height: 0.7
 ) !default;
 
 $headingtype: (
-  font-family: '"Merriweather", serif',
+  font-family: '"Styrene A", "Styrene B", "Space Grotesk", "Helvetica Neue", Arial, sans-serif',
   regular: 400,
-  bold: 700,
-  cap-height: 0.75
+  bold: 500,
+  cap-height: 0.7
 ) !default;
 
 $monospacetype: (

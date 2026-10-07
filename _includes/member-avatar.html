@@ -1,0 +1,8 @@
+{% assign m = include.member %}
+<span class="avatar{% if include.size %}  avatar--{{ include.size }}{% endif %}">
+  {%- if m.photo and m.photo != "" -%}
+    <img src="{{ m.photo | relative_url }}" alt="{{ m.name }}" loading="lazy">
+  {%- else -%}
+    <span class="avatar__initials" aria-hidden="true">{{ m.initials | default: m.name | slice: 0, 2 }}</span>
+  {%- endif -%}
+</span>

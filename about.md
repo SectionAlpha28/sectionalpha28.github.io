@@ -1,24 +1,36 @@
 ---
-title: About Section A
-excerpt: "Who we are: Section A of the HBS MBA Class of 2028."
+title: The Section
+feature_text: |
+  ## The Section
+  Who we are, where we come from, and what we've built together
+excerpt: "About Section A of the HBS MBA Class of 2028."
 ---
 
-Section A is one of the sections of the Harvard Business School MBA Class of 2028. In the first year, the section takes every required course together in the same classroom, and becomes a close community along the way.
+<p class="lede">At HBS, every first-year student is placed in a section. You take every required course together, in the same seats, with the same people. Section A is ours.</p>
 
-## Our section
+<p class="eyebrow">By the numbers</p>
 
-_Placeholder: add a short introduction to the section here, such as what makes the section unique, its traditions, and its motto or nickname._
+<div class="stats">
+  <div><span class="stats__value">—</span><span class="stats__label">Classmates</span></div>
+  <div><span class="stats__value">—</span><span class="stats__label">Countries</span></div>
+  <div><span class="stats__value">—</span><span class="stats__label">Languages</span></div>
+  <div><span class="stats__value">—</span><span class="stats__label">Industries</span></div>
+</div>
 
-## Section leadership
+<p class="eyebrow">Our story</p>
 
-_Placeholder: list the section's elected roles (for example, section president, education rep, social chairs) once the section has agreed on what to publish. Only add names and photos with each person's consent._
+## How it started
 
-| Role | Name |
-| --- | --- |
-| Section President | _TBD_ |
-| Education Representative | _TBD_ |
-| Social Chair | _TBD_ |
+_Placeholder: the story of the section's first weeks. The first cold call, the first section event, the moment it started to feel like a team._
 
-## Partners and families
+<p class="eyebrow">Traditions</p>
 
-_Placeholder: information for partners and families of section members._
+## The things we do
+
+- _Placeholder: a weekly ritual_
+- _Placeholder: a section trip or retreat_
+- _Placeholder: an inside joke that became a tradition_
+
+<p class="eyebrow">Motto</p>
+
+> _Placeholder: the section's motto or rallying cry._
