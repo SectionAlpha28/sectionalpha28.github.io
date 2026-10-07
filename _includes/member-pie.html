@@ -1,18 +1,10 @@
 {% comment %}
   "What I'm made of" pie chart for a member profile. Pass slices=page.made_of:
   a list of {label, value}; values are scaled to the whole pie. Slices are named
-  with leader lines (drawn by _plugins/member_pie.rb); on narrow screens the
-  names move to a list under the chart.
+  with leader lines (drawn by _plugins/member_pie.rb), in a wide and a compact
+  phone layout.
 {% endcomment %}
 {% assign slices = include.slices %}
-{% assign colours = "#c9a54c,#6e6d6a,#e5e4e2,#7a6230,#f0dc9c" | split: "," %}
 <figure class="member-pie">
   {% member_pie slices %}
-  <figcaption>
-    <ul class="member-pie__legend">
-      {% for s in slices limit: 5 %}
-      <li><span class="member-pie__key" style="background: {{ colours[forloop.index0] }}"></span>{{ s.label }}</li>
-      {% endfor %}
-    </ul>
-  </figcaption>
 </figure>
