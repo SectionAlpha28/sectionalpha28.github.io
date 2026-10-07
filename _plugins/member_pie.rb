@@ -15,10 +15,12 @@ module SectionA
     HEIGHT = 420
     CX = WIDTH / 2.0
     CY = HEIGHT / 2.0
-    R = 140.0
-    ELBOW = 26.0
-    LABEL_GAP = 40.0
-    MARGIN = 24.0
+    R = 120.0
+    ELBOW = 22.0
+    LINE_HEIGHT = 28.0
+    LABEL_PAD = 14.0
+    WRAP = 13
+    MARGIN = 20.0
 
     def initialize(tag_name, markup, tokens)
       super
@@ -41,6 +43,7 @@ module SectionA
         mid = angle + sweep / 2
         callouts << {
           label: s["label"],
+          lines: wrap(s["label"]),
           mid: mid,
           side: Math.cos(mid) >= 0 ? :right : :left,
           y: CY + (R + ELBOW) * Math.sin(mid)
@@ -76,15 +79,36 @@ module SectionA
       %(<path d="M#{f CX},#{f CY} L#{f x1},#{f y1} A#{f R},#{f R} 0 #{large} 1 #{f x2},#{f y2} Z" fill="#{colour}" stroke="#{SURFACE}" stroke-width="2" stroke-linejoin="round"/>)
     end
 
-    # Keep labels on one side at least LABEL_GAP apart, inside the canvas.
+    # Space for a label's text, which sits above its leader line.
+    def label_height(c)
+      c[:lines].size * LINE_HEIGHT + LABEL_PAD
+    end
+
+    # Keep labels on one side from overlapping, inside the canvas.
     def spread(side)
       side.sort_by! { |c| c[:y] }
       side.each_cons(2) do |a, b|
-        b[:y] = a[:y] + LABEL_GAP if b[:y] - a[:y] < LABEL_GAP
+        min = a[:y] + label_height(b)
+        b[:y] = min if b[:y] < min
       end
       overflow = side.empty? ? 0 : side.last[:y] - (HEIGHT - MARGIN)
       side.each { |c| c[:y] -= overflow } if overflow.positive?
-      side.each { |c| c[:y] = [c[:y], MARGIN].max }
+      floor = MARGIN
+      side.each do |c|
+        c[:y] = [c[:y], floor + label_height(c)].max
+        floor = c[:y]
+      end
+    end
+
+    # Break a label into short lines so it fits beside the pie.
+    def wrap(label)
+      label.split.each_with_object([]) do |word, lines|
+        if lines.empty? || (lines.last + " " + word).length > WRAP
+          lines << word
+        else
+          lines[-1] = lines.last + " " + word
+        end
+      end
     end
 
     def callout(c)
@@ -99,9 +123,15 @@ module SectionA
         <g class="member-pie__callout">
         <polyline points="#{f ax},#{f ay} #{f ex},#{f ey} #{f end_x},#{f ey}" fill="none" stroke="#{LINE}" stroke-width="1"/>
         <circle cx="#{f ax}" cy="#{f ay}" r="3.5" fill="#{SURFACE}" stroke="#e5e4e2" stroke-width="1.5"/>
-        <text x="#{f end_x}" y="#{f(ey - 9)}" text-anchor="#{anchor}">#{h c[:label]}</text>
+        <text x="#{f end_x}" y="#{f(ey - 10 - (c[:lines].size - 1) * LINE_HEIGHT)}" text-anchor="#{anchor}">#{tspans(c[:lines], end_x)}</text>
         </g>
       G
+    end
+
+    def tspans(lines, x)
+      lines.each_with_index.map do |line, i|
+        %(<tspan x="#{f x}"#{i.zero? ? "" : %( dy="#{f LINE_HEIGHT}")}>#{h line}</tspan>)
+      end.join
     end
 
     def f(n)
