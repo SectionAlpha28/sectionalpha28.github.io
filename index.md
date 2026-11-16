@@ -11,6 +11,7 @@ excerpt: "Section A of the Harvard Business School MBA Class of 2028: the people
 
 <p class="lede">For one year, the same group of people sits in the same classroom, every day, arguing about the same cases. By the end, they're something closer to family. This is Section A.</p>
 
+{% if site.show_members %}
 <p class="eyebrow">Meet the section</p>
 
 ## The people
@@ -21,6 +22,7 @@ Each seat in the room comes with a different story. Get to know the classmates b
 
 {% assign members_url = "/members/" | relative_url %}
 {% include button.html text="Meet everyone" link=members_url %}
+{% endif %}
 
 <p class="eyebrow">Life in Section A</p>
 
