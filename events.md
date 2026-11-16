@@ -1,5 +1,6 @@
 ---
 title: Events
+published: false # hidden: most section events are private
 feature_text: |
   ## Events
   Where Section A gets together outside the classroom
