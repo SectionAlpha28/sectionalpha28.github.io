@@ -7,6 +7,11 @@
 # 6. Jekyll collections settings
 # 7. Site settings
 # 8. Site favicons & manifest icons
+# Member profiles: false hides the member pages, the Members page and every link to them.
+# To turn them back on, set this to true, set the members collection output to true
+# and restore the Members nav item below.
+show_members: false
+
 # 9. Site navigation
 
 # 1. Files excluded from Jekyll builds
@@ -55,7 +60,7 @@ collections:
       Recaps, milestones and the small moments in between
   members:
     title: Members
-    output: true
+    output: false # Member pages are hidden for now; set to true together with show_members
     permalink: /members/:name/
 
 # 6. Jekyll collections settings
@@ -121,8 +126,9 @@ navigation_header:
   url: /
 - title: The Section
   url: /about/
-- title: Members
-  url: /members/
+# Members nav item is hidden while show_members is false; restore it here when turning profiles back on
+# - title: Members
+#   url: /members/
 - title: Stories
   url: /blog/
 - title: Events

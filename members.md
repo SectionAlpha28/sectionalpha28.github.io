@@ -1,5 +1,6 @@
 ---
 title: Members
+published: false # hidden while show_members is false in _config.yml
 feature_text: |
   ## The people of Section A
   Different countries, careers and stories. One classroom
